@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import './App.css';
 import List from './js/components/List'
 import Form from './js/components/Form'
+import Error from './js/components/Error'
 
 class App extends Component {
   render() {
@@ -12,6 +13,7 @@ class App extends Component {
           <h2>Articles</h2>
           <List />
         </div>
+        <Error />
         <div className='col-md-4 offset-md-1'>
           <h2>Add a new article</h2>
           <Form />
