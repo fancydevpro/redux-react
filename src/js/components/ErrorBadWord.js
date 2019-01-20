@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
-  return { error: state.error }
+  return { error: state.error_bad_word }
 }
 
 const ConnectedError = ({ error }) => (
