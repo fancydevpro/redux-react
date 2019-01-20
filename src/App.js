@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 import './App.css';
 import List from './js/components/List'
 import Form from './js/components/Form'
-import Error from './js/components/Error'
+import ErrorBadWord from './js/components/ErrorBadWord'
+import Post from './js/components/Posts'
+import ErrorFetch from './js/components/ErrorFetch'
 
 class App extends Component {
   render() {
@@ -13,10 +15,19 @@ class App extends Component {
           <h2>Articles</h2>
           <List />
         </div>
-        <Error />
+        <div className='col-md-4 offset-md-1'>
+          <ErrorBadWord />
+        </div>
         <div className='col-md-4 offset-md-1'>
           <h2>Add a new article</h2>
           <Form />
+        </div>
+        <div className='col-md-4 offset-md-1'>
+          <ErrorFetch />
+        </div>
+        <div className='col-md-4 offset-md-1'>
+          <h2>API posts</h2>
+          <Post />
         </div>
       </div>
     );
