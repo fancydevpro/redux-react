@@ -1,4 +1,8 @@
-import { ADD_ARTICLE, DATA_LOADED } from '../constants/action-types'
+import { 
+  ADD_ARTICLE, 
+  DATA_LOADED,
+  FETCH_ERROR,
+} from '../constants/action-types'
 
 export function addArticle(payload) {
   return {
@@ -13,6 +17,9 @@ export function getData() {
       .then(res => res.json())
       .then(json => {
         dispatch({ type: DATA_LOADED, payload: json })
+      })
+      .catch(error => {
+        dispatch({ type: FETCH_ERROR })
       })
   }
 }
