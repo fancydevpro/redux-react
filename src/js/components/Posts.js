@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-import { getData } from '../actions'
+import { requestFetch } from '../actions'
+
+function mapDispatchToProps(dispatch) {
+  return {
+    requestFetch: url => dispatch(requestFetch(url))
+  }
+}
 
 class Post extends Component {
   componentDidMount() {
-    this.props.getData()
+    this.props.requestFetch('https://jsonplaceholder.typicode.com/posts')
   }
 
   render() {
@@ -27,4 +33,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { getData })(Post)
+export default connect(mapStateToProps, mapDispatchToProps/*{ requestFetch }*/)(Post)
