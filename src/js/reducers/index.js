@@ -1,4 +1,11 @@
-import { ADD_ARTICLE, FOUND_BAD_WORD, DATA_LOADED, FETCH_ERROR } from '../constants/action-types'
+import { 
+  ADD_ARTICLE, 
+  FOUND_BAD_WORD, 
+  DATA_LOADED, 
+  FETCH_ERROR,
+  INCREMENT,
+  INCREMENT_ASYNC,
+} from '../constants/action-types'
 
 const initialState = {
   articles: [],
@@ -24,7 +31,14 @@ function rootReducer(state = initialState, action) {
     return Object.assign({}, state, {
       error_fetch: true,
     })
+  } else if (action.type === INCREMENT) {
+    console.log('INCRMENT: ', action)
+    return Object.assign({}, state)
+  } else if (action.type === INCREMENT_ASYNC) {
+    console.log('INCRMENT_ASYNC: ', action)
+    return Object.assign({}, state)
   }
+
   return state
 }
 
